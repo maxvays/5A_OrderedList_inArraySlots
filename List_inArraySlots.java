@@ -33,14 +33,13 @@ public class List_inArraySlots {
      @return a string representation of this list,
      in [a,b,c,] format
     */
-  public String toString() {
-  	String output = "[";
-		for(int i : list) {
-			output += i + ", ";
-		}
-		output += "]";
-		return output;
-  }
+	public String toString() {
+		if(numberOfElements == 0) return "[]";
+		String result = "[";
+		for( int elemIndex = 0; elemIndex < numberOfElements; elemIndex++)
+    	result += list[ elemIndex] + ",";
+		return result + "]";
+	}
 
 
   /**
@@ -130,11 +129,17 @@ public class List_inArraySlots {
     (that is, increase the index associated with each).
   */
   public void add( int index, int value) {
-  	add(list[numberOfElements - 1]);
-		for(int i = numberOfElements - 2; i > index; i--){
-    	list[i] = list[i - 1];
+		if(numberOfElements == 0){
+			list[0] = value;
+			numberOfElements++;
 		}
-		list[index] = value;
+  	else{
+			add(list[numberOfElements - 1]);
+			for(int i = numberOfElements - 2; i > index; i--){
+	    	list[i] = list[i - 1];
+			}
+			list[index] = value;
+		}
   }
 
 }
