@@ -44,4 +44,12 @@ public class OrderedList_inArraySlots{
     }
   }
 
+  public int get(int index){
+    return orderedList.get(index);
+  }
+
+  public int remove(int index){
+    return orderedList.remove(index);
+  }
+
 }

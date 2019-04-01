@@ -109,7 +109,7 @@ public class List_inArraySlots {
   public int remove (int index) {
 		int oldValue = list[index];
 		int[] newArray = new int[list.length - 1];
-		for(int i = 0; i < numberOfElements; i++) {
+		for(int i = 0; i < numberOfElements - 1; i++) {
 		    if (i < index) {
 					newArray[i] = list[i];
 		    }
